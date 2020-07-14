@@ -23,15 +23,13 @@ https://github.com/abhededam/dndworlddata/blob/master/certificates/Certificate_S
 ### making the database 
 for creating all my needed tables with their attributes i used DB Browser for SQLite (https://sqlitebrowser.org/). Fortunatly for me, one of my flatmates has an exam about object oriented databases coming up, so they could answer my question as how to describe n:m relationships in databases.... you just create a new table for that. WOW sometimes solutions can be this easy and obvious. so i created tables for all the relationship except for one, the relationship between continents and pois is the only 1:n. 
 
-i added some more test data to my database so i could test if the relationship tables work. they do obviously. 
-<addr>
-  SELECT continent.name FROM continent, zone, rcontinentzone 
-  WHERE zone.zoneid = rcontinentzone.zonenid 
-  AND continent.continentid = rcontinentzone.continentid 
-  AND zone.zoneid = 2;
+i added some more test data to my database so i could test if the relationship tables work. they do obviously.
 
-    >>>
-  Tharen Gwalkier
-  Ti Nilam (draconisch/Tamil für Feuerland)
-<addr>
+try: 
 
+    SELECT continent.name FROM continent, zone, rconzon
+    WHERE zone.id = rconzon.zone
+    AND continent.id = rconzon.continent
+    AND zone.id = 2;
+ 
+ 
