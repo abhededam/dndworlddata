@@ -10,8 +10,6 @@ using TMPro;
 
 public class PoiInput : MonoBehaviour
 {
-    [SerializeField] private loadPoi loadPoi;
-
     Button add;
     Button cancel;
     TMP_InputField inputname;
@@ -72,23 +70,15 @@ public class PoiInput : MonoBehaviour
         dbconn = (IDbConnection) new SqliteConnection(conn);
         dbconn.Open(); //Open connection to the database.
         IDbCommand dbcmd = dbconn.CreateCommand();
-        string sqlQuery = "DELETE FROM POI WHERE id > 3; INSERT INTO POI (name,type,x,y) VALUES('" + poiname + "','" + poitype + "'," + poix + "," + poiy + "); ";
+        string sqlQuery = "INSERT INTO POI (name,type,x,y) VALUES('" + poiname + "','" + poitype + "'," + poix + "," + poiy + "); ";
         dbcmd.CommandText = sqlQuery;
         IDataReader reader = dbcmd.ExecuteReader();
 
-        /*while (reader.Read())
-        {
-            Debug.Log("Saved" + reader.GetInt32(0));
-        }*/
-        
         reader.Close();
         reader = null;
         dbcmd.Dispose();
         dbcmd = null;
         dbconn.Close();
         dbconn = null;
-
-
-        //loadPoi.Load();
     }
 }
