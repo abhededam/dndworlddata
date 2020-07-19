@@ -20,8 +20,6 @@ public class loadpoi : MonoBehaviour
     private void Awake()
     {
         readDB();
-
-        
     }
 
 
