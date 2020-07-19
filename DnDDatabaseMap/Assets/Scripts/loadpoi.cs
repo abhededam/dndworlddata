@@ -6,7 +6,7 @@ using Mono.Data.Sqlite;
 using System.Data; 
 using System;
 
-public class loadpoi : MonoBehaviour
+public class loadPoi : MonoBehaviour
 {
     public GameObject poi;
 
@@ -25,7 +25,7 @@ public class loadpoi : MonoBehaviour
 
     private void Start()
     {
-        loadPoi();
+        Load();
     }
 
 
@@ -56,7 +56,7 @@ public class loadpoi : MonoBehaviour
         dbconn = null;
     }
 
-    public void loadPoi()
+    public void Load()
     {
         foreach (int i in index)
         {
