@@ -31,5 +31,14 @@ try:
     WHERE zone.id = rconzon.zone
     AND continent.id = rconzon.continent
     AND zone.id = 2;
- 
+    
+## How to:
+Only works in the test play mode in Unity, not as a .exe, so the project needs to be opened in UnityEngine.
+
+1. hold p and click left mousekey to set new poi
+2. type in name and choose type
+3. click on Add POI
+4. wait until Popup disappears
+5. click on r to refresh
+6. VOILA new poi visible
  
