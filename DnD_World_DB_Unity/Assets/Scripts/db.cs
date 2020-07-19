@@ -5,26 +5,25 @@ using UnityEngine.UI;
 using Mono.Data.Sqlite;
 using System.Data;
 using System;
-using System.Diagnostics;
-using System.Security.Cryptography;
 
 public class db : MonoBehaviour
 {
-    [SerializeField] private AddNewPoi newPoiInput;
+    //[SerializeField] private AddNewPoi newPoiInput;
      
     public List<int> index = new List<int>();
     public List<string> namepoi = new List<string>();
     public List<int> xpos = new List<int>();
     public List<int> ypos = new List<int>();
 
-    GameObject poi;
+    public GameObject poi;
 
     // Start is called before the first frame update
     void Start()
     {
+        UnityEngine.Debug.Log("start");
         //Instantiate(poi, new Vector3(0, 0, 0), Quaternion.identity);
         readDB();
-
+        
         foreach (int i in index)
         {
             GameObject newPoi = new GameObject();
@@ -37,7 +36,7 @@ public class db : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             UnityEngine.Debug.Log("SET NEW POI");
            // newPoiInput.Show();

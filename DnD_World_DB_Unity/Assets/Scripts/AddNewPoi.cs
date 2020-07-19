@@ -43,7 +43,7 @@ public class AddNewPoi : MonoBehaviour
         poiname = inputname.text;
         poitype = inputtype.transform.Find("Label").GetComponent<TMP_Text>().text;
 
-        string conn = "URI=file:" + Application.dataPath + "/worlddb.db"; //Path to database.
+        /*string conn = "URI=file:" + Application.dataPath + "/worlddb.db"; //Path to database.
 
         IDbConnection dbconn;
         dbconn = (IDbConnection)new SqliteConnection(conn);
@@ -52,7 +52,7 @@ public class AddNewPoi : MonoBehaviour
         string sqlQuery = 
             "INSERT INTO poi [(name, type, x, y)]" + "VALUES(" + poiname + "," + poitype + "," + poix + "," + poiy + "); ";
         dbcmd.CommandText = sqlQuery;
-        IDataReader reader = dbcmd.ExecuteReader();
+        IDataReader reader = dbcmd.ExecuteReader();*/
 
 
     }
