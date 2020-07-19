@@ -6,14 +6,18 @@ using Mono.Data.Sqlite;
 using System.Data;
 using System;
 using System.Diagnostics;
+using System.Security.Cryptography;
 
 public class db : MonoBehaviour
 {
-    public GameObject poi;
+    [SerializeField] private AddNewPoi newPoiInput;
+     
     public List<int> index = new List<int>();
     public List<string> namepoi = new List<string>();
     public List<int> xpos = new List<int>();
     public List<int> ypos = new List<int>();
+
+    GameObject poi;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +35,16 @@ public class db : MonoBehaviour
         }
     }
 
-    void readDB()
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            UnityEngine.Debug.Log("SET NEW POI");
+           // newPoiInput.Show();
+        }
+    }
+
+    public void readDB()
     {
         string conn = "URI=file:" + Application.dataPath + "/worlddb.db"; //Path to database.
 
